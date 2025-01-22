@@ -1,22 +1,24 @@
-#include <LiquidCrystal_I2C.h>
+#include <Wire.h>              // Library untuk komunikasi I2C
+#include <LiquidCrystal_I2C.h> // Library untuk LCD I2C
 
-LiquidCrystal_I2C lcd_1(0x20, 16, 2);
+// Alamat I2C LCD, biasanya 0x27 atau 0x3F. Sesuaikan jika berbeda.
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 void setup()
 {
-    lcd_1.init();
-    lcd_1.setCursor(0, 0);
-    lcd_1.backlight();
-    lcd_1.display();
+    lcd.init();
+    lcd.setCursor(0, 0);
+    lcd.backlight();
+    lcd.display();
 }
 
 void loop()
 {
-    lcd_1.setCursor(0, 0);
-    lcd_1.print("Hallo");
+    lcd.setCursor(0, 0);
+    lcd.print("Hallo");
     delay(2000);
-    lcd_1.setCursor(0, 1);
-    lcd_1.print("Semuanya");
+    lcd.setCursor(0, 1);
+    lcd.print("Semuanya");
     delay(2000);
-    lcd_1.clear();
+    lcd.clear();
 }
