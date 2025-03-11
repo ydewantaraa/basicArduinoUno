@@ -1,11 +1,12 @@
 const int aktif = 0;
 const int Buzzer = 2;
 const int tombol1 = 3;
-const int tombol2 =4; 
-const int tombol3 =5;
-const int tombol4 =6;
-const int tombol5 =7;
-const int tombol6 =8;
+const int tombol2 = 4; 
+const int tombol3 = 5;
+const int tombol4 = 6;
+const int tombol5 = 7;
+const int tombol6 = 8;
+const int tombol7 = 9;
 
 void setup() {
   pinMode(Buzzer, OUTPUT);
@@ -15,6 +16,7 @@ void setup() {
   pinMode(tombol4, INPUT_PULLUP);
   pinMode(tombol5, INPUT_PULLUP);
   pinMode(tombol6, INPUT_PULLUP);
+  pinMode(tombol7, INPUT_PULLUP);
 }
 
 void loop() {
@@ -35,6 +37,9 @@ void loop() {
   }
   while (digitalRead(tombol6) == aktif) {
     tone(Buzzer,440,500);
+  }
+  while (digitalRead(tombol7) == aktif) {
+    tone(Buzzer,495,500);
   }
 }
 
